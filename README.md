@@ -1,6 +1,8 @@
 # QuickHire
 
-> A simple, full-stack job board,
+> A simple, full-stack job board
+
+**Live Demo → [https://quickhire-jobs.vercel.app](https://quickhire-jobs.vercel.app/)**
 
 Users can browse job listings, search & filter by keyword / category / location, view full job details, and submit applications. A basic admin panel lets you post and delete job listings.
 
@@ -191,54 +193,6 @@ App runs at `http://localhost:3000`
 | --------------------- | -------------------- | ----------------------- |
 | `NEXT_PUBLIC_API_URL` | Backend API base URL | `http://localhost:5000` |
 
----
-
-## Deployment
-
-### Step 1 — Deploy Backend to Railway
-
-1. Go to [railway.app](https://railway.app) and create a **New Project**
-2. Click **Deploy from GitHub repo** → select `quickhire`
-3. In **Settings → Source**, set **Root Directory** to `backend`
-4. Add environment variables in the Railway dashboard:
-
-   ```env
-   PORT=5000
-   MONGO_URI=<your-mongodb-atlas-connection-string>
-   FRONTEND_URL=https://your-app.vercel.app
-   ```
-
-5. Railway auto-detects `npm start` and deploys. Copy the generated URL  
-   e.g. `https://quickhire-backend.up.railway.app`
-
----
-
-### Step 2 — Deploy Frontend to Vercel
-
-1. Go to [vercel.com](https://vercel.com) and click **New Project**
-2. Import the `quickhire` GitHub repository
-3. In **Configure Project**, set **Root Directory** to `frontend`
-4. Add the environment variable:
-
-   ```env
-   NEXT_PUBLIC_API_URL=https://quickhire-backend.up.railway.app
-   ```
-
-5. Click **Deploy** — Vercel runs `npm run build` automatically
-
----
-
-### Step 3 — Update CORS
-
-After Vercel gives you a URL (e.g. `https://quickhire.vercel.app`), go back to Railway and update:
-
-```env
-FRONTEND_URL=https://quickhire.vercel.app
-```
-
-Then redeploy the backend. This allows the frontend origin through CORS.
-
----
 
 ## Validation Rules
 
