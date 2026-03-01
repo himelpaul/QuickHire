@@ -193,7 +193,6 @@ App runs at `http://localhost:3000`
 | --------------------- | -------------------- | ----------------------- |
 | `NEXT_PUBLIC_API_URL` | Backend API base URL | `http://localhost:5000` |
 
-
 ## Validation Rules
 
 - All required fields must be present
